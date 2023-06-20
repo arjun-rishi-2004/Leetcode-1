@@ -1,0 +1,41 @@
+ 
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+
+My Solution:
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        first=[]
+        second=[]
+        for i in s :
+            first.append(i)
+        for j in t:
+            second.append(j)
+        first.sort()
+        second.sort()
+        if first==second:
+            return True
+        else:
+            return False
+
+
+MY SOLUTION WORKED FOR ALL THE TEST CASES IN  THE FIRST SUBMISSION !!!!
+
+Problems with my solution:
+
+Two arrays,Two sort functions, Two for loops-- not efficient one
+
+
+
+Optimal Solution:
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s)==sorted(t)
+
+but sort takes O(nlog n) time complexity
+
+
+Or use an Hashmap
+
